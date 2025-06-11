@@ -1,0 +1,8 @@
+/Users/asunwake/workspace/java/BACKEND_ASSIGNMENT_ATA/demo/src/main/java/com/example/backend/BackendAssignmentAtaApplication.java
+/Users/asunwake/workspace/java/BACKEND_ASSIGNMENT_ATA/demo/src/main/java/com/example/backend/ServletInitializer.java
+/Users/asunwake/workspace/java/BACKEND_ASSIGNMENT_ATA/demo/src/main/java/com/example/backend/controller/JobDataController.java
+/Users/asunwake/workspace/java/BACKEND_ASSIGNMENT_ATA/demo/src/main/java/com/example/backend/dto/JobDataDto.java
+/Users/asunwake/workspace/java/BACKEND_ASSIGNMENT_ATA/demo/src/main/java/com/example/backend/entities/JobDataEntitiy.java
+/Users/asunwake/workspace/java/BACKEND_ASSIGNMENT_ATA/demo/src/main/java/com/example/backend/repository/JobDataRepository.java
+/Users/asunwake/workspace/java/BACKEND_ASSIGNMENT_ATA/demo/src/main/java/com/example/backend/service/DataLoaderService.java
+/Users/asunwake/workspace/java/BACKEND_ASSIGNMENT_ATA/demo/src/main/java/com/example/backend/service/JobDataService.java

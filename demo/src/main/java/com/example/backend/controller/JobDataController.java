@@ -14,12 +14,16 @@ import java.util.List;
 @RestController
 public class JobDataController {
 
-    JobDataService jobDataService
+    private final JobDataService jobDataService;
+
+    public JobDataController(JobDataService jobDataService) {
+        this.jobDataService = jobDataService;
+    }
 
     @GetMapping("/getJobData")
-    public ResponseEntity<List<JobDataDto>> getJobData(@RequestBody ){
-
-        return new ResponseEntity<>("Survey entry added successfully!", 200);
+    public ResponseEntity<List<JobDataDto>> getJobData() {
+        List<JobDataDto> jobDataList = jobDataService.getAllJobData();
+        return new ResponseEntity<>(jobDataList, HttpStatus.OK);
     }
 
 }

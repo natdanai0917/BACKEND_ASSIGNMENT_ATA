@@ -34,17 +34,35 @@ public class DataLoaderService {
 
         try {
             // Read JSON file from resources
-            ClassPathResource resource = new ClassPathResource("data/salary_data.json");
+            ClassPathResource resource = new ClassPathResource("datasource/salary_survey-3.json");
             InputStream inputStream = resource.getInputStream();
 
-            // Parse JSON to List of SalaryData
-            List<JobDataEntitiy> salaryDataList = objectMapper.readValue(inputStream,
-                    new TypeReference<List<JobDataEntitiy>>() {});
+            // Parse JSON to List of JobDataDto
+            List<JobDataDto> dtoList = objectMapper.readValue(inputStream,
+                    new TypeReference<List<JobDataDto>>() {});
+
+            // Map DTOs to Entities
+            List<JobDataEntitiy> entityList = dtoList.stream().map(dto -> {
+                JobDataEntitiy entity = new JobDataEntitiy();
+                entity.setTimestamp(dto.getTimestamp());
+                entity.setEmployer(dto.getEmployer());
+                entity.setLocation(dto.getLocation());
+                entity.setJobTitle(dto.getJobTitle());
+                entity.setYearsAtEmployer(dto.getYearsAtEmployer());
+                entity.setYearsOfExperience(dto.getYearsOfExperience());
+                entity.setSalary(dto.getSalary());
+                entity.setSigningBonus(dto.getSigningBonus());
+                entity.setAnnualBonus(dto.getAnnualBonus());
+                entity.setAnnualStockValueBonus(dto.getAnnualStockValueBonus());
+                entity.setGender(dto.getGender());
+                entity.setAdditionalComments(dto.getAdditionalComments());
+                return entity;
+            }).toList();
 
             // Save to database
-            jobDataRepository.saveAll(salaryDataList);
+            jobDataRepository.saveAll(entityList);
 
-            System.out.println("Data loaded successfully: " + salaryDataList.size() + " salary records");
+            System.out.println("Data loaded successfully: " + entityList.size() + " salary records");
 
         } catch (IOException e) {
             System.err.println("Error loading data: " + e.getMessage());
