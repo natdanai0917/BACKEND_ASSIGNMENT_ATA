@@ -1,0 +1,78 @@
+-------------------------------------------------------------------------------
+Test set: com.example.backend.JobDataControllerTest
+-------------------------------------------------------------------------------
+Tests run: 9, Failures: 6, Errors: 0, Skipped: 0, Time elapsed: 1.593 s <<< FAILURE! -- in com.example.backend.JobDataControllerTest
+com.example.backend.JobDataControllerTest.testFilterReturnsEmpty -- Time elapsed: 0.337 s <<< FAILURE!
+java.lang.AssertionError: JSON path "$.length()" expected:<0> but was:<3777>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:61)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:128)
+	at org.springframework.test.util.JsonPathExpectationsHelper.assertValue(JsonPathExpectationsHelper.java:172)
+	at org.springframework.test.web.servlet.result.JsonPathResultMatchers.lambda$value$2(JsonPathResultMatchers.java:112)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:214)
+	at com.example.backend.JobDataControllerTest.testFilterReturnsEmpty(JobDataControllerTest.java:98)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+
+com.example.backend.JobDataControllerTest.testFilterByMultipleFields -- Time elapsed: 0.083 s <<< FAILURE!
+java.lang.AssertionError: No value at JSON path "$[0].jobTitle"
+	at org.springframework.test.util.JsonPathExpectationsHelper.evaluateJsonPath(JsonPathExpectationsHelper.java:351)
+	at org.springframework.test.util.JsonPathExpectationsHelper.assertValue(JsonPathExpectationsHelper.java:148)
+	at org.springframework.test.web.servlet.result.JsonPathResultMatchers.lambda$value$2(JsonPathResultMatchers.java:112)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:214)
+	at com.example.backend.JobDataControllerTest.testFilterByMultipleFields(JobDataControllerTest.java:66)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+Caused by: com.jayway.jsonpath.PathNotFoundException: No results for path: $[0]['jobTitle']
+
+com.example.backend.JobDataControllerTest.testFilterByJobTitle -- Time elapsed: 0.066 s <<< FAILURE!
+java.lang.AssertionError: No value at JSON path "$[0].jobTitle"
+	at org.springframework.test.util.JsonPathExpectationsHelper.evaluateJsonPath(JsonPathExpectationsHelper.java:351)
+	at org.springframework.test.util.JsonPathExpectationsHelper.assertValue(JsonPathExpectationsHelper.java:148)
+	at org.springframework.test.web.servlet.result.JsonPathResultMatchers.lambda$value$2(JsonPathResultMatchers.java:112)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:214)
+	at com.example.backend.JobDataControllerTest.testFilterByJobTitle(JobDataControllerTest.java:38)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+Caused by: com.jayway.jsonpath.PathNotFoundException: No results for path: $[0]['jobTitle']
+
+com.example.backend.JobDataControllerTest.testFilterByGender -- Time elapsed: 0.042 s <<< FAILURE!
+java.lang.AssertionError: No value at JSON path "$[0].gender"
+	at org.springframework.test.util.JsonPathExpectationsHelper.evaluateJsonPath(JsonPathExpectationsHelper.java:351)
+	at org.springframework.test.util.JsonPathExpectationsHelper.assertValue(JsonPathExpectationsHelper.java:148)
+	at org.springframework.test.web.servlet.result.JsonPathResultMatchers.lambda$value$2(JsonPathResultMatchers.java:112)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:214)
+	at com.example.backend.JobDataControllerTest.testFilterByGender(JobDataControllerTest.java:56)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+Caused by: com.jayway.jsonpath.PathNotFoundException: No results for path: $[0]['gender']
+
+com.example.backend.JobDataControllerTest.testFilterBySalaryGte -- Time elapsed: 0.053 s <<< FAILURE!
+java.lang.AssertionError: No value at JSON path "$[0].salary"
+	at org.springframework.test.util.JsonPathExpectationsHelper.evaluateJsonPath(JsonPathExpectationsHelper.java:351)
+	at org.springframework.test.util.JsonPathExpectationsHelper.assertExistsAndReturn(JsonPathExpectationsHelper.java:388)
+	at org.springframework.test.util.JsonPathExpectationsHelper.exists(JsonPathExpectationsHelper.java:239)
+	at org.springframework.test.web.servlet.result.JsonPathResultMatchers.lambda$exists$3(JsonPathResultMatchers.java:124)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:214)
+	at com.example.backend.JobDataControllerTest.testFilterBySalaryGte(JobDataControllerTest.java:47)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+Caused by: com.jayway.jsonpath.PathNotFoundException: No results for path: $[0]['salary']
+
+com.example.backend.JobDataControllerTest.testSparseFields -- Time elapsed: 0.212 s <<< FAILURE!
+java.lang.AssertionError: No value at JSON path "$[0].jobTitle"
+	at org.springframework.test.util.JsonPathExpectationsHelper.evaluateJsonPath(JsonPathExpectationsHelper.java:351)
+	at org.springframework.test.util.JsonPathExpectationsHelper.assertExistsAndReturn(JsonPathExpectationsHelper.java:388)
+	at org.springframework.test.util.JsonPathExpectationsHelper.exists(JsonPathExpectationsHelper.java:239)
+	at org.springframework.test.web.servlet.result.JsonPathResultMatchers.lambda$exists$3(JsonPathResultMatchers.java:124)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:214)
+	at com.example.backend.JobDataControllerTest.testSparseFields(JobDataControllerTest.java:76)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+Caused by: com.jayway.jsonpath.PathNotFoundException: No results for path: $[0]['jobTitle']
+
