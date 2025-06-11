@@ -8,7 +8,6 @@ public class BackendAssignmentAtaApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(BackendAssignmentAtaApplication.class, args);
-		System.out.println("Hello world");
 	}
 
 }

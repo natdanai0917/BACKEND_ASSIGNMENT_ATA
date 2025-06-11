@@ -14,12 +14,12 @@ import java.util.List;
 @RestController
 public class JobDataController {
 
-    JobDataService jobDataService
+    //JobDataService jobDataService
 
-    @GetMapping("/getJobData")
-    public ResponseEntity<List<JobDataDto>> getJobData(@RequestBody ){
-
-        return new ResponseEntity<>("Survey entry added successfully!", 200);
-    }
+//    @GetMapping("/getJobData")
+//    public ResponseEntity<List<JobDataDto>> getJobData(@RequestBody ){
+//
+//        return new ResponseEntity<>("Survey entry added successfully!", 200);
+//    }
 
 }

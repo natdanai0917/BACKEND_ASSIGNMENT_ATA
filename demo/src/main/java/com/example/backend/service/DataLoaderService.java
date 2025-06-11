@@ -34,7 +34,7 @@ public class DataLoaderService {
 
         try {
             // Read JSON file from resources
-            ClassPathResource resource = new ClassPathResource("data/salary_data.json");
+            ClassPathResource resource = new ClassPathResource("datasource/salary_survey-3.json");
             InputStream inputStream = resource.getInputStream();
 
             // Parse JSON to List of SalaryData
