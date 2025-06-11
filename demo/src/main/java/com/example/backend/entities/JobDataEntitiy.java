@@ -5,39 +5,55 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Table(name = "job_data")
 public class JobDataEntitiy {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @JsonProperty("timestamp")
+
+    @JsonProperty("Timestamp")
     private String timestamp;
-    @JsonProperty("employer")
+
+    @JsonProperty("Employer")
     private String employer;
-    @JsonProperty("location")
+
+    @JsonProperty("Location")
     private String location;
-    @JsonProperty("jobTitle")
+
+    @JsonProperty("Job Title")
     private String jobTitle;
-    @JsonProperty("yearsAtEmployer")
+
+    @JsonProperty("Years at Employer")
     private String yearsAtEmployer;
-    @JsonProperty("yearsOfExperience")
+
+    @JsonProperty("Years of Experience")
     private String yearsOfExperience;
-    @JsonProperty("salary")
+
+    @JsonProperty("Salary")
     private String salary;
-    @JsonProperty("signingBonus")
+
+    @JsonProperty("Signing Bonus")
     private String signingBonus;
-    @JsonProperty("annualBonus")
+
+    @JsonProperty("Annual Bonus")
     private String annualBonus;
-    @JsonProperty("annualStockValueBonus")
+
+    @JsonProperty("Annual Stock Value/Bonus")
     private String annualStockValueBonus;
-    @JsonProperty("gender")
+
+    @JsonProperty("Gender")
     private String gender;
-    @JsonProperty("additionalComments")
+
+    @JsonProperty("Additional Comments")
+    @jakarta.persistence.Column(length = 2000)
     private String additionalComments;
 }
